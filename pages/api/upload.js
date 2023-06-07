@@ -2,7 +2,9 @@ import cors from 'cors';
 import { dataUriToBuffer } from 'data-uri-to-buffer';
 import sharp from 'sharp';
 
-const corsMiddleware = cors();
+const corsMiddleware = cors({
+  origin: '*',
+});
 
 export default function handler(req, res) {
   corsMiddleware(req, res, () => {
